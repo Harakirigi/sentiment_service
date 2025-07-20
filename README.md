@@ -25,6 +25,7 @@ pip install -r requirements.txt
 ```bash
 python -m uvicorn app.main:app --reload
 ```
+
 # API
 
 ## POST /reviews
