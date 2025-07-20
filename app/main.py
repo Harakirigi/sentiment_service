@@ -30,7 +30,7 @@ app = FastAPI(title="Sentiment Analysis Service", lifespan=lifespan)
 
 async def get_db():
     try:
-        async with aiosqlite.connect("sentiment_service/reviews.db") as db:
+        async with aiosqlite.connect("app/reviews.db") as db:
             db.row_factory = aiosqlite.Row
             yield db
     except aiosqlite.Error as e:

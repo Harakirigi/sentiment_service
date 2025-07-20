@@ -5,7 +5,7 @@ logger = logging.getLogger(__name__)
 
 async def init_db():
     try:
-        async with aiosqlite.connect("sentiment_service/reviews.db") as db:
+        async with aiosqlite.connect("app/reviews.db") as db:
             await db.execute(
                 """
                 CREATE TABLE IF NOT EXISTS reviews (
