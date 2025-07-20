@@ -1,11 +1,11 @@
 ## Установка
 
-Клонируйте репозиторий:
+1. Клонируйте репозиторий:
 ```bash
 git clone https://github.com/Harakirigi/sentiment_service
 cd sentiment_service
 ```
-## Создайте виртуальное окружение
+2. Создайте виртуальное окружение
 На Windows:
 ```bash
 python -m venv venv
@@ -16,11 +16,11 @@ venv\Scripts\activate
 python -m venv venv
 source venv/bin/activate
 ```
-## Установите зависимости
+3. Установите зависимости
 ```bash
 pip install -r requirements.txt
 ```
-## Запустите сервис
+4. Запустите сервис
 ```bash
 python -m uvicorn app.main:app --reload
 ```
@@ -40,6 +40,9 @@ curl -X POST "http://localhost:8000/reviews" -H "Content-Type: application/json"
   "created_at": "2025-07-20T10:02:34.123456"
 }
 ```
+Ошибки:
+- 422: Пустой или слишком длинный отзыв ("detail": "Текст отзыва не может быть пустым", "ensure this value has at most 1000 characters").
+- 500: Ошибка базы данных ("detail": "Не удалось сохранить отзыв в базе данных").
 ## GET /reviews
 Запрос:
 ```bash
@@ -56,3 +59,6 @@ curl "http://localhost:8000/reviews?sentiment=negative"
   }
 ]
 ```
+Ошибки:
+- 422: Неверная тональность ("detail": "Тональность должна быть 'positive', 'negative' или 'neutral'").
+- 500: Ошибка базы данных ("detail": "Не удалось получить отзывы из базы данных").
