@@ -27,6 +27,7 @@ python -m uvicorn app.main:app --reload
 # API
 
 ## POST /reviews
+Создаёт отзыв и определяет его тональность
 Запрос:
 ```bash
 curl -X POST "http://localhost:8000/reviews" -H "Content-Type: application/json" -d '{"text": "Отличный сервис!"}'
@@ -44,6 +45,7 @@ curl -X POST "http://localhost:8000/reviews" -H "Content-Type: application/json"
 - 422: Пустой или слишком длинный отзыв ("detail": "Текст отзыва не может быть пустым", "ensure this value has at most 1000 characters").
 - 500: Ошибка базы данных ("detail": "Не удалось сохранить отзыв в базе данных").
 ## GET /reviews
+Возвращает отзывы (можно фильтровать по sentiment=positive|negative|neutral)
 Запрос:
 ```bash
 curl "http://localhost:8000/reviews?sentiment=negative"
