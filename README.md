@@ -1,9 +1,10 @@
 ## Установка
 
 Клонируйте репозиторий:
+```bash
 git clone https://github.com/Harakirigi/sentiment_service
 cd sentiment_service
-
+```
 ## Создайте виртуальное окружение
 
 python -m venv venv
