@@ -1,7 +1,8 @@
 ## Установка
 
 Клонируйте репозиторий:
-git clone <URL-репозитория>
+git clone https://github.com/Harakirigi/sentiment_service
+cd sentiment_service
 
 ## Создайте виртуальное окружение
 
@@ -16,7 +17,7 @@ pip install -r requirements.txt
 
 ## Установите зависимости
 
-python -m uvicorn sentiment_service.main:app --reload
+python -m uvicorn app.main:app --reload
 
 ## API
 
