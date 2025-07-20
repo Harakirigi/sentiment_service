@@ -6,6 +6,7 @@ git clone https://github.com/Harakirigi/sentiment_service
 cd sentiment_service
 ```
 2. Создайте виртуальное окружение
+
 На Windows:
 ```bash
 python -m venv venv
@@ -28,6 +29,7 @@ python -m uvicorn app.main:app --reload
 
 ## POST /reviews
 Создаёт отзыв и определяет его тональность
+
 Запрос:
 ```bash
 curl -X POST "http://localhost:8000/reviews" -H "Content-Type: application/json" -d '{"text": "Отличный сервис!"}'
@@ -46,6 +48,7 @@ curl -X POST "http://localhost:8000/reviews" -H "Content-Type: application/json"
 - 500: Ошибка базы данных ("detail": "Не удалось сохранить отзыв в базе данных").
 ## GET /reviews
 Возвращает отзывы (можно фильтровать по sentiment=positive|negative|neutral)
+
 Запрос:
 ```bash
 curl "http://localhost:8000/reviews?sentiment=negative"
